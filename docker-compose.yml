@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  bot:
+    build: .
+    volumes:
+      - ./config.yml:/app/config.yml:ro
+      - ./utils/users-orm.sqlite:/app/utils/dev.sqlite
+      - ./PingBot.session:/app/TagBot.session
+    restart: unless-stopped
